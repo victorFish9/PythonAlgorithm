@@ -18,7 +18,32 @@ def perakkaisetLuvut():
         print(luku)
         print(luku - 1)
 
+def tulosta_portaikko(askelma):
+    for i in range(1, askelma * 2, 2):
+        print("#" * i)
+def aapelin_ika():
+    for a in range(1, 100):
+        if (a + 2) * (a + 1) * a == 42840:
+            print("Aapeli on", a, " vuotta vanha")
+            break
+def vainion_ika():
+    for a in range(1, 100):
+        v = 2 * a
+        if (2 * a - 20) == 3 * (a - 20):
+            print(a)
+            break
+
+def pienin_positiivinen_kokonaisluku():
+    i = 1
+    while True:
+        if i % 12 == 0 and i % 34 == 0 and i % 56 == 0:
+            return i
+        i += 1
+        
+        
+pienin_luku = pienin_positiivinen_kokonaisluku()
+print("Pienin positiivinen kokonaisluku, joka on jaollinen luvuilla 12, 34 ja 56, on:", pienin_luku)
+
 if __name__ == "__main__":
-    #karkausvuosi()
-    #lukujono()
-    perakkaisetLuvut()
+    
+    pienin_positiivinen_kokonaisluku()
