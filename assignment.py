@@ -39,11 +39,76 @@ def pienin_positiivinen_kokonaisluku():
         if i % 12 == 0 and i % 34 == 0 and i % 56 == 0:
             return i
         i += 1
-        
-        
-pienin_luku = pienin_positiivinen_kokonaisluku()
-print("Pienin positiivinen kokonaisluku, joka on jaollinen luvuilla 12, 34 ja 56, on:", pienin_luku)
 
+def mahdollinen_koodi():
+    x = 0
+    for a in range(1, 10):
+        for b in range(1, 10):
+            for c in range(1, 10):
+                for d in range(1, 10):
+                    if a * b * c * d == 252:
+                        x += 1
+                        print(f"Mahdollinen koodi: {a}{b}{c}{d}")
+    print(x)
+
+def mahdollinen_koodi2():
+    x = 0
+    for a in range(1, 10):
+        for b in range(a + 1, 10):
+            for c in range(b + 1, 10):
+                for d in range(c + 1, 10):
+                    
+                    x += 1
+                        #print(f"Mahdollinen koodi: {a}{b}{c}{d}")
+    print(x)
+def mahdollinen_koodi3():
+    x = 0
+    for a in range(1, 10):
+        for b in range(1, 10):
+            for c in range(1, 10):
+                for d in range(1, 10):
+                    if a != b and a != c and a != d and b != c and b != d and c != d:
+                        x += 1
+                        #print(f"Mahdollinen koodi: {a}{b}{c}{d}")
+    print(x)
+
+def nopanheitto():
+    x = 0
+
+    for a in range(1, 7):
+        for b in range(1, 7):
+            for c in range(1, 7):
+                for d in range(1, 7):
+                    for e in range(1, 7):
+                        if a + b + c + d + e == 15:
+                            x += 1
+    print(x)
+
+def pythogora():
+    x = 0
+
+    for a in range(1, 51):
+        for b in range(a, 51):  
+            c_squared = a**2 + b**2
+            c = int(c_squared**0.5)  # Tarkistetaan, että c on kokonaisluku
+            if c_squared == c**2 and c <= 50:
+                x += 1
+
+    print(x)
+
+def shakki():
+    count = 0
+
+    for q1_row in range(8):
+        for q1_col in range(8):
+            for q2_row in range(8):
+                for q2_col in range(8):
+                    if (q1_row, q1_col) != (q2_row, q2_col) and \
+                    (q1_row != q2_row and q1_col != q2_col and \
+                        abs(q1_row - q2_row) != abs(q1_col - q2_col)):
+                        count += 1
+
+    print("Tapojen määrä 8x8-shakkilaudalla:", count)
 if __name__ == "__main__":
+    shakki()
     
-    pienin_positiivinen_kokonaisluku()
